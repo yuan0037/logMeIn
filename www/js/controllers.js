@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $auth) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $auth, $ionicPopup) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -37,16 +37,16 @@ angular.module('starter.controllers', [])
       $auth.authenticate(provider)
         .then(function() {
           console.log("success");
-          // $ionicPopup.alert({
-          //   title: 'Success',
-          //   content: 'You have successfully logged in!'
-          // })
+          $ionicPopup.alert({
+            title: 'Success',
+            content: 'You have successfully logged in!'
+          })
         })
         .catch(function(response) {
-          // $ionicPopup.alert({
-          //   title: 'Error',
-          //   content: response.data ? response.data || response.data.message : response
-          // })
+          $ionicPopup.alert({
+            title: 'Error',
+            content: "response.data ? response.data || response.data.message : response"
+          })
         console.log('failed');
 
         });
