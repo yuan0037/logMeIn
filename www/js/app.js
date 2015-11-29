@@ -86,7 +86,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'satellizer'])
     $authProvider.tokenPrefix = 'satellizer';
     $authProvider.authHeader = 'Authorization';
     $authProvider.authToken = 'Bearer';
-    $authProvider.storageType = 'sessionStorage';
+    $authProvider.storageType = 'localStorage';
 
     $authProvider.facebook({
       clientId: '842317509223173',
